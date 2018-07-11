@@ -1,0 +1,74 @@
+1. 
+SELECT * FROM employees
+WHERE last_name LIKE 'Z%';
+
+2. 
+SELECT first_name, last_name FROM employees
+WHERE last_name LIKE 'Mi%';
+
+3. 
+SELECT first_name, last_name, birth_date FROM employees
+ORDER BY birth_date 
+LIMIT 5;
+
+4.
+SELECT * FROM employees
+ORDER BY hire_date DESC
+LIMIT 5;
+
+5. 
+SELECT * FROM employees
+WHERE gender = 'F'
+ORDER BY hire_date DESC
+LIMIT 5;
+
+Bonus 1.
+SELECT * FROM employees
+WHERE first_name = 'Mario' 
+OR first_name = 'Luigi';
+
+Bonus 2.
+SELECT first_name, last_name FROM employees
+WHERE last_name NOT LIKE 'Aingworth';
+
+or 
+
+SELECT first_name, last_name FROM employees
+WHERE last_name != 'Aingworth';
+
+Bonus 3.
+SELECT * FROM employees
+WHERE first_name = 'Arif'
+AND hire_date >= '1988-01-01'
+AND hire_date <= '1992-12-31'; 
+
+Bonus 4
+SELECT * FROM salaries
+WHERE salary > 100000
+AND from_date <= '1992-06-24'
+AND to_date >= '1992-06-24'
+
+Bonus 6
+SELECT * FROM employees
+WHERE  LOWER(last_name) = 'simmel'
+
+SQL2
+---------------------------
+
+Use SQL to grab the following data from your mini-capstone:
+1
+Count how many products exist in your database.
+2
+Find the average price of all your products.
+3
+Return all the products from your database, priced lowest to highest, but without description or image.
+
+1
+SELECT COUNT(*) FROM products;
+
+2
+SELECT AVG(price) FROM products;
+
+3 
+SELECT id, name, price, created_at, updated_at, created_at FROM products
+ORDER BY price;
